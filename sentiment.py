@@ -1,8 +1,6 @@
 import sys
 import os
 import csv
-from pprint import pprint
-import pandas as pd
 
 class Phrase():
 	def __init__(self):
