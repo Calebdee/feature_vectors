@@ -31,7 +31,7 @@ def makeOutputFile(inFile, phrases):
 	print(outFile)
 
 	file = open(outFile, 'w')
-	writer = csv.writer(file)
+	writer = csv.writer(file, lineterminator='\n')
 	data = ['LABEL', 'DIFF', 'EXCL', 'NEG', 'NGTNEG', 'NGTPOS', 'POS', 'W1', 'W2', 'W3', 'W4', 'W5']
 	writer.writerow(data)
 	for phrase in phrases:

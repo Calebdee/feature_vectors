@@ -74,7 +74,7 @@ def makeOutputFile(inFile, sentences, threshold):
 	outFile =  inFile[:len(inFile)-4] + "_BOW" + str(threshold) + ".csv"
 
 	file = open(outFile, 'w')
-	writer = csv.writer(file)
+	writer = csv.writer(file, lineterminator='\n')
 	data = ["LABEL"] + ["F" + str(i) for i in range(len(sentences[0])-1)]
 	writer.writerow(data)
 	for sentence in sentences:
