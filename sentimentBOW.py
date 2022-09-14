@@ -10,6 +10,8 @@ def main():
 	feature_mapping = thresholdFeatureMapping(feature_set, threshold)
 	train_bow = createSentences(train, feature_mapping)
 	makeOutputFile(train, train_bow, threshold)
+	test_bow = createSentences(test, feature_mapping)
+	makeOutputFile(test, test_bow, threshold)
 
 def createFeatureSet(file):
 	file = open(file)
@@ -78,7 +80,6 @@ def makeOutputFile(inFile, sentences, threshold):
 	data = ["LABEL"] + ["F" + str(i) for i in range(len(sentences[0])-1)]
 	writer.writerow(data)
 	for sentence in sentences:
-		print(sentence)
 		writer.writerow(sentence)
 
 
